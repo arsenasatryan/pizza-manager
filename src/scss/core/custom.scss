@@ -1,0 +1,39 @@
+.content-wrapper {
+  background: #fff;
+  @include make-container(80px);
+  padding-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 11px 0 rgb(0 0 0 / 5%);
+  margin-bottom: 80px
+}
+
+.ng-invalid.ng-touched,
+.ng-invalid.ng-dirty {
+  @extend .is-invalid;
+
+  & ~ .invalid-feedback,
+  & ~ .invalid-feedback {
+    display: block;
+  }
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .section-to-print, .section-to-print * {
+    visibility: visible;
+  }
+  .non-printable, .non-printable * {
+    visibility: hidden !important;
+  }
+  .section-to-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

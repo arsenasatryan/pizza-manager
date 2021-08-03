@@ -1,0 +1,17 @@
+@use "sass:map";
+
+@import '~bootstrap/scss/mixins';
+@import "~src/scss/core/variables";
+
+.main-wrapper {
+  position: relative;
+  @include make-container(map.get($page-gutter, 'lg'));
+}
+.background-maker {
+  width: 100%;
+  height: calc(95vh - #{map.get($header-height, 'lg')});
+  min-height: 600px;
+  position: absolute;
+  background: rgb(22,51,91);
+  background: linear-gradient(0deg, rgba(7,18,32,1) 0%, rgba(22,51,91,1) 100%);
+}

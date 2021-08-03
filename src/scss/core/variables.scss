@@ -1,0 +1,35 @@
+$font-family-sans-serif:
+  "Roboto",
+    // Basic web fallback
+  Arial, sans-serif,
+    // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+// correct with all the breakpoints, when making site responsive
+$header-height: (
+  xs: 106px,
+  sm: 106px,
+  md: 106px,
+  lg: 106px,
+  xl: 106px,
+  xxl: 106px,
+);
+
+$page-gutter: (
+  xs: 10px,
+  sm: 60px,
+  md: 80px,
+  lg: 250px,
+  xl: 250px,
+  xxl: 250px,
+);
+
+// colors
+
+$primary: #4a90e2;
+$success: #7ed321;
+$danger: #ff0055;
+
+
+
+
