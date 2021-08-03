@@ -5,12 +5,9 @@ import {
   ApexStroke,
   ApexFill,
   ApexAxisChartSeries,
-  ApexGrid,
   ApexXAxis,
   ApexYAxis,
-  ApexMarkers,
   ApexTitleSubtitle,
-  ApexDataLabels
 } from "ng-apexcharts";
 
 export type BarChartOptions = {

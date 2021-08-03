@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { OrderStatusActionsComponent } from './order-status-actions.component';
+import {OrderStatusActionsComponent} from './order-status-actions.component';
 
 describe('OrderStatusActionsComponent', () => {
   let component: OrderStatusActionsComponent;
@@ -8,9 +8,9 @@ describe('OrderStatusActionsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrderStatusActionsComponent ]
+      declarations: [OrderStatusActionsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -34,8 +34,8 @@ export class NewOrderComponent implements OnInit, OnDestroy {
         this.loadingPrices = false;
       }))
       .subscribe((prices) => {
-      this.prices = prices;
-    });
+        this.prices = prices;
+      });
     this.subscription.add(priceSub);
   }
 
@@ -50,7 +50,7 @@ export class NewOrderComponent implements OnInit, OnDestroy {
   }
 
   private resetForm(): void {
-    // hacky solution to reset form and initliaze again
+    // hacky solution to reset form and initalize again
     this.form = null as unknown as FormGroup;
     setTimeout(() => {
       this.form = this.buildForm();
@@ -72,7 +72,7 @@ export class NewOrderComponent implements OnInit, OnDestroy {
     const pizzas = (this.form.get('pizzas') as FormArray);
     if (pizzas) {
       pizzas.push(this.generateDefaultPizza());
-      this.addToActiveList(`pizza-${pizzas.length-1}`);
+      this.addToActiveList(`pizza-${pizzas.length - 1}`);
     }
   }
 
@@ -120,8 +120,8 @@ export class NewOrderComponent implements OnInit, OnDestroy {
           itemId: randomIdGenerator(),
           price: Number(this.totalPrice.toFixed(2)),
         }).subscribe(() => {
-            this.toastService.showSuccess('Order successfully placed.');
-            this.resetForm();
+          this.toastService.showSuccess('Order successfully placed.');
+          this.resetForm();
         }, () => {
           this.toastService.showError('Something went wrong. please try again.');
         });

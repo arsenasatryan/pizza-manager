@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, Output, SimpleChanges, EventEmitter} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, Output, EventEmitter} from '@angular/core';
 import {IPrices} from '../../../infrastructure/interfaces/prices';
 import {IPizza} from '../../../infrastructure/interfaces/pizza';
 import sizes from '../../../infrastructure/select-options/sizes';
@@ -23,7 +23,7 @@ export class OrderSummaryComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
-  public ngOnChanges(changes: SimpleChanges): void {
+  public ngOnChanges(): void {
     this.generateSummary();
   }
 

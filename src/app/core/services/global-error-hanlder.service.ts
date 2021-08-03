@@ -5,7 +5,8 @@ export class GlobalErrorHandler implements ErrorHandler {
 
   // Error handling is important and needs to be loaded first.
   // Because of this we should manually inject the services with Injector.
-  constructor(@Inject(PLATFORM_ID) private platformId: object) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {
+  }
 
   handleError(error: Error): void {
     // log error somewhere

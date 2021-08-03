@@ -8,6 +8,7 @@ import {ControlContainer, FormGroup} from "@angular/forms";
 })
 export class BasicInformationFormComponent implements OnInit {
   public contactForm!: FormGroup;
+
   constructor(public controlContainer: ControlContainer) {
   }
 

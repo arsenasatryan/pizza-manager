@@ -16,9 +16,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public lineChartOptions!: LineChartOptions;
   public deliveredChartOptions!: BarChartOptions;
   public pendingDeliveryChartOptions!: BarChartOptions;
-  @ViewChild('deliveredChart', { static: false}) deliveredChart!: ChartComponent;
-  @ViewChild('pendingDeliveryChart', { static: false}) pendingDeliveryChart!: ChartComponent;
-  @ViewChild('lineChart', { static: false}) lineChart!: ChartComponent;
+  @ViewChild('deliveredChart', {static: false}) deliveredChart!: ChartComponent;
+  @ViewChild('pendingDeliveryChart', {static: false}) pendingDeliveryChart!: ChartComponent;
+  @ViewChild('lineChart', {static: false}) lineChart!: ChartComponent;
 
   public deliveredCount = 0;
   public pendingDeliveryCount = 0;
@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public onTimeDeliveryCount = 0;
   public lateTimeDeliveryCount = 0;
   public totalCount = 0;
-  public lineChartSeriesData: {x: string; y: number}[] = [];
+  public lineChartSeriesData: { x: string; y: number }[] = [];
 
   constructor(private ordersService: OrdersService) {
     this.ordersService.subscribeToListChanges();
@@ -79,17 +79,19 @@ export class DashboardComponent implements OnInit, OnDestroy {
       chartOptions.series = [value];
     }
     if (chart && chartOptions) {
-      chart.updateOptions(chartOptions)?.catch(() => {});
+      chart.updateOptions(chartOptions)?.catch(() => {
+      });
     }
   }
 
-  public updateLineChart(chartSeries: {x: string; y: number}[]) {
+  public updateLineChart(chartSeries: { x: string; y: number }[]) {
     const maxInSeries = Math.max(...chartSeries.map(data => data.y));
     if (this.lineChartOptions) {
       this.lineChartOptions.series[0].data = chartSeries;
       this.lineChartOptions.yaxis.max = maxInSeries + 5;
       if (this.lineChart) {
-        this.lineChart.updateOptions(this.lineChartOptions)?.catch(() => {});
+        this.lineChart.updateOptions(this.lineChartOptions)?.catch(() => {
+        });
       }
     }
   }
@@ -97,7 +99,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public calculateReportingValues(orders: IOrder[]) {
     this.resetData();
     this.totalCount = orders.length;
-    const grouped: {[key: string]: { x: string; y: number }} =  {};
+    const grouped: { [key: string]: { x: string; y: number } } = {};
     orders.forEach((x) => {
       if (x.status === OrderStatus.COMPLETED) {
         this.deliveredCount++;
@@ -119,7 +121,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         toHourOnly.setMilliseconds(0);
         const toHoursISO = toHourOnly.toISOString()
         if (!grouped[toHoursISO]) {
-          grouped[toHoursISO] = { x: toHoursISO, y: 1};
+          grouped[toHoursISO] = {x: toHoursISO, y: 1};
         } else {
           grouped[toHoursISO].y++;
         }
@@ -130,7 +132,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   get onTimeDeliveryPercent() {
-    return this.deliveredCount ?  (this.onTimeDeliveryCount * 100 / this.deliveredCount).toFixed(2) : 0;
+    return this.deliveredCount ? (this.onTimeDeliveryCount * 100 / this.deliveredCount).toFixed(2) : 0;
   }
 
   get lateDeliveryPercent() {

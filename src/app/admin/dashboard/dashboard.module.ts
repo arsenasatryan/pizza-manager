@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {DashboardRoutingModule} from './dashboard-routing.module';
+import {DashboardComponent} from './dashboard/dashboard.component';
 import {NgApexchartsModule} from 'ng-apexcharts';
 
 
@@ -16,4 +16,5 @@ import {NgApexchartsModule} from 'ng-apexcharts';
     NgApexchartsModule,
   ]
 })
-export class DashboardModule { }
+export class DashboardModule {
+}

@@ -18,7 +18,8 @@
                 <h5 class="m-0 text-uppercase">Pizza {{ i + 1}}</h5>
                 <div class="actions">
                   <button type="button" class="btn btn-outline-danger mr-3"
-                          *ngIf="pizzaGroupControls.length > 1" (click)="removePizza(i)">Remove Pizza</button>
+                          *ngIf="pizzaGroupControls.length > 1" (click)="removePizza(i)">Remove Pizza
+                  </button>
                   <button ngbPanelToggle class="btn btn-link p-0">
                     <i class="bi bi-caret-up-fill" role="img" aria-label="Opened" *ngIf="opened"></i>
                     <i class="bi bi-caret-down-fill" role="img" aria-label="Closed" *ngIf="!opened"></i>
@@ -36,7 +37,8 @@
     <section class="order-summary position-relative mb-5">
       <h3 class="with-border mb-4">Summary</h3>
       <div *ngIf="!loadingPrices else loadingTmpl">
-        <app-order-summary [pizzas]="form.get('pizzas')?.value" [prices]="prices" (updateTotalPrice)="updateTotalPrice($event)"></app-order-summary>
+        <app-order-summary [pizzas]="form.get('pizzas')?.value" [prices]="prices"
+                           (updateTotalPrice)="updateTotalPrice($event)"></app-order-summary>
       </div>
     </section>
     <section class="place-order d-flex justify-content-end pb-5">

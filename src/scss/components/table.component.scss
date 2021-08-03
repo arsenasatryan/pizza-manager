@@ -1,11 +1,13 @@
 table {
   thead {
     background: #f6f7f8;
+
     th {
       font-size: 0.875rem;
       color: #aeb4ba;
       font-weight: normal;
     }
+
     th[sortable] {
       cursor: pointer;
       user-select: none;
@@ -28,11 +30,14 @@ table {
       -ms-transform: rotate(180deg);
     }
   }
+
   tbody tr {
     background: #f8f8f9;
+
     &:nth-of-type(odd) {
       background: #fff;
     }
+
     td {
       border: none;
       color: #747e89;

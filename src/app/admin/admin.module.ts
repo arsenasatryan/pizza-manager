@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { AdminRoutingModule } from './admin-routing.module';
+import {AdminRoutingModule} from './admin-routing.module';
 import {OrdersService} from './services/orders.service';
 import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
 import {environment} from '../../environments/environment';
 
-const config: SocketIoConfig = { url: `${environment.SOCKET_URL}`, options: {} };
+const config: SocketIoConfig = {url: `${environment.SOCKET_URL}`, options: {}};
 
 @NgModule({
   declarations: [],
@@ -19,4 +19,5 @@ const config: SocketIoConfig = { url: `${environment.SOCKET_URL}`, options: {} }
     OrdersService
   ]
 })
-export class AdminModule { }
+export class AdminModule {
+}

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ControlContainer, FormControl, FormGroup} from '@angular/forms';
 import toppings from '../../../infrastructure/select-options/toppings';
 
@@ -9,8 +9,10 @@ import toppings from '../../../infrastructure/select-options/toppings';
 })
 export class PizzaOptionsComponent implements OnInit {
   public pizzaForm!: FormGroup;
-  public toppingOptions: {name: string; value: string}[] = toppings;
-  constructor(public controlContainer: ControlContainer) { }
+  public toppingOptions: { name: string; value: string }[] = toppings;
+
+  constructor(public controlContainer: ControlContainer) {
+  }
 
   ngOnInit(): void {
     this.pizzaForm = this.controlContainer.control as FormGroup;

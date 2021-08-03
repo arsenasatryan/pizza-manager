@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {LoadingComponent} from './components/loading/loading.component';
 import {NgbSortableHeader} from './directives/sortable.directive';
 import {TimeAgoPipe} from './pipes/time-ago.pipe';
-
 
 
 @NgModule({
@@ -21,4 +20,5 @@ import {TimeAgoPipe} from './pipes/time-ago.pipe';
     TimeAgoPipe
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

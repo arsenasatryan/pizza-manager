@@ -12,7 +12,8 @@ export class OrderStatusActionsComponent implements OnInit {
   @Output() changeStatus = new EventEmitter<OrderStatus>();
   public orderStatus = OrderStatus;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

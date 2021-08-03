@@ -16,7 +16,8 @@ export class OrdersService {
   public manageOrders$ = new Subject<ITableStateOptions>();
   private subscription!: Subscription;
 
-  constructor(private http: HttpClient, private socket: Socket) {}
+  constructor(private http: HttpClient, private socket: Socket) {
+  }
 
   public getOrders(): Observable<IOrder[]> {
     return this.http.get<IOrder[]>('orders?_sort=createdTime&_order=desc').pipe(tap((orders) => {
@@ -49,7 +50,7 @@ export class OrdersService {
 
   public sortAndFilterOrders(state: ITableStateOptions) {
     let orders = this.orders$.getValue();
-    if (state.sortDirection ||  state.sortColumn) {
+    if (state.sortDirection || state.sortColumn) {
       orders = [...orders].sort((a, b) => {
         const res = compare(a[state.sortColumn as (keyof IOrder)] as string,
           b[state.sortColumn as (keyof IOrder)] as string);

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NewOrderComponent } from './new-order.component';
+import {NewOrderComponent} from './new-order.component';
 
 describe('NewOrderComponent', () => {
   let component: NewOrderComponent;
@@ -8,9 +8,9 @@ describe('NewOrderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewOrderComponent ]
+      declarations: [NewOrderComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

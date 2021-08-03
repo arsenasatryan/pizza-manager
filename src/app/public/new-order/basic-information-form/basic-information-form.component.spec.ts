@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BasicInformationFormComponent } from './basic-information-form.component';
+import {BasicInformationFormComponent} from './basic-information-form.component';
 
 describe('BasicInformationFormComponent', () => {
   let component: BasicInformationFormComponent;
@@ -8,9 +8,9 @@ describe('BasicInformationFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BasicInformationFormComponent ]
+      declarations: [BasicInformationFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

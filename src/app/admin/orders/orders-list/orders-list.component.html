@@ -32,32 +32,35 @@
   </div>
   <table class="table table-striped">
     <thead>
-      <tr>
-        <th scope="col" sortable="itemId" (sort)="onSort($event)">Item ID</th>
-        <th scope="col" sortable="address" (sort)="onSort($event)">Address</th>
-        <th scope="col" sortable="createdTime" (sort)="onSort($event)">Ordered Time</th>
-        <th scope="col" sortable="status" (sort)="onSort($event)">Status / Action</th>
-      </tr>
+    <tr>
+      <th scope="col" sortable="itemId" (sort)="onSort($event)">Item ID</th>
+      <th scope="col" sortable="address" (sort)="onSort($event)">Address</th>
+      <th scope="col" sortable="createdTime" (sort)="onSort($event)">Ordered Time</th>
+      <th scope="col" sortable="status" (sort)="onSort($event)">Status / Action</th>
+    </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let order of orderListManaged$ | async">
-        <td>{{ order.itemId }}</td>
-        <td>{{ order.address }}</td>
-        <td>{{ order.createdTime | timeAgo }}</td>
-        <td>
-          <app-order-status-actions [status]="order.status" [loading]="loadingOrderUpdate" (changeStatus)="onStatusChange($event, order.id)"></app-order-status-actions>
-        </td>
-      </tr>
+    <tr *ngFor="let order of orderListManaged$ | async">
+      <td>{{ order.itemId }}</td>
+      <td>{{ order.address }}</td>
+      <td>{{ order.createdTime | timeAgo }}</td>
+      <td>
+        <app-order-status-actions [status]="order.status" [loading]="loadingOrderUpdate"
+                                  (changeStatus)="onStatusChange($event, order.id)"></app-order-status-actions>
+      </td>
+    </tr>
     </tbody>
   </table>
 
   <div class="d-flex justify-content-between p-2">
     <ngb-pagination
       class="non-printable"
-      [collectionSize]="(orders$ | async)!.length" [(page)]="state.page" [pageSize]="state.pageSize" (pageChange)="onPageChange()">
+      [collectionSize]="(orders$ | async)!.length" [(page)]="state.page" [pageSize]="state.pageSize"
+      (pageChange)="onPageChange()">
     </ngb-pagination>
 
-    <select class="custom-select non-printable" style="width: auto" name="pageSize" [(ngModel)]="state.pageSize" (ngModelChange)="onPageChange()">
+    <select class="custom-select non-printable" style="width: auto" name="pageSize" [(ngModel)]="state.pageSize"
+            (ngModelChange)="onPageChange()">
       <option [ngValue]="2">2 items per page</option>
       <option [ngValue]="5">5 items per page</option>
       <option [ngValue]="10">10 items per page</option>

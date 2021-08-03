@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { OrdersRoutingModule } from './orders-routing.module';
-import { OrdersListComponent } from './orders-list/orders-list.component';
+import {OrdersRoutingModule} from './orders-routing.module';
+import {OrdersListComponent} from './orders-list/orders-list.component';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import {SharedModule} from '../../shared/shared.module';
 import {FormsModule} from '@angular/forms';
-import { OrderStatusActionsComponent } from './order-status-actions/order-status-actions.component';
+import {OrderStatusActionsComponent} from './order-status-actions/order-status-actions.component';
 
 @NgModule({
   declarations: [
@@ -21,4 +21,5 @@ import { OrderStatusActionsComponent } from './order-status-actions/order-status
     FormsModule,
   ],
 })
-export class OrdersModule { }
+export class OrdersModule {
+}

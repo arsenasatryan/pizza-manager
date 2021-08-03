@@ -3,7 +3,7 @@ import {IOrder} from '../../infrastructure/interfaces/order';
 
 export type SortColumn = keyof IOrder | '';
 export type SortDirection = 'asc' | 'desc' | '';
-const rotate: {[key: string]: SortDirection} = { 'asc': 'desc', 'desc': '', '': 'asc' };
+const rotate: { [key: string]: SortDirection } = {'asc': 'desc', 'desc': '', '': 'asc'};
 
 export interface SortEvent {
   column: SortColumn;
