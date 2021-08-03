@@ -1,7 +1,11 @@
 <div class="content-wrapper">
   <div class="row">
-    <div class="col-6">
-      <h1>Delivery Status</h1>
+    <div class="col-6 bar-border-right">
+      <h1 class="text-center mb-4">Delivery Status</h1>
+      <div class="text-center">
+        <h3>Total Orders</h3>
+        <span class="total-count">{{ totalCount }}</span>
+      </div>
       <div class="row">
         <div class="col-6">
           <apx-chart
@@ -29,13 +33,17 @@
         </div>
       </div>
     </div>
-    <div class="col-6">
-      <h2>Total Sales</h2>
-      <p>GPB</p>
-      <p>{{ totalPrice | number : '1.2-2' }}</p>
+    <div class="col-6 position-relative">
+      <div class="total-sales text-center">
+        <div>
+          <h2 class="h1-like">Total Sales</h2>
+          <p class="rate">GPB</p>
+          <p class="price">{{ totalPrice | number : '1.2-2' }}</p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row mt-5 pb-4">
     <div class="col-8">
       <apx-chart
         #lineChart
@@ -49,16 +57,26 @@
         [fill]="lineChartOptions.fill"
       ></apx-chart>
     </div>
-    <div class="col-4">
-      <p>Report</p>
+    <div class="col-4 line-border-left">
+      <p class="text-center report-title">Report</p>
       <div class="row">
         <div class="col-6">
-          <p>On Time Delivery</p>
-          {{ onTimeDeliveryPercent}}%
+          <div class="delivery-progress">
+            <p class="title">On Time Delivery</p>
+            <span class="percent">{{ onTimeDeliveryPercent}}%</span>
+            <div class="progress">
+              <div class="progress-bar bg-success" [style.width]="onTimeDeliveryPercent + '%'" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
         </div>
         <div class="col-6">
-          <p>Late Deliveries</p>
-          {{ lateDeliveryPercent}}%
+          <div class="delivery-progress">
+            <p class="title">Late Deliveries</p>
+            <span class="percent">{{ lateDeliveryPercent}}%</span>
+            <div class="progress">
+              <div class="progress-bar bg-danger" [style.width]="lateDeliveryPercent + '%'" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

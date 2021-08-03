@@ -1,0 +1,46 @@
+h1,.h1-like {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+.total-count {
+  font-size: 1.5rem;
+}
+.bar-border-right {
+  border-right: 1px solid #545252;
+}
+.line-border-left {
+  border-left: 1px solid #c5c3c3;
+}
+.total-sales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  .rate {
+    font-size: 0.875rem;
+  }
+  .price {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+.report-title {
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+.delivery-progress {
+  padding-left: 20px;
+  .progress {
+    height: 0.5rem;
+  }
+  .title {
+    font-size: 0.8rem;
+    color: #c7baba;
+  }
+  .percent {
+    font-size: 2rem;
+  }
+}

@@ -132,11 +132,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   get onTimeDeliveryPercent() {
-    return this.deliveredCount ? (this.onTimeDeliveryCount * 100 / this.deliveredCount).toFixed(2) : 0;
+    return this.deliveredCount ? (this.onTimeDeliveryCount * 100 / this.deliveredCount).toFixed(1) : 0;
   }
 
   get lateDeliveryPercent() {
-    return this.deliveredCount ? (this.lateTimeDeliveryCount * 100 / this.deliveredCount).toFixed(2) : 0;
+    return this.deliveredCount ? (this.lateTimeDeliveryCount * 100 / this.deliveredCount).toFixed(1) : 0;
   }
 
   public resetData() {
