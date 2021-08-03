@@ -1,0 +1,49 @@
+<ng-container [formGroup]="contactForm" *ngIf="contactForm">
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" formControlName="name">
+        <div class="invalid-feedback" *ngIf="contactForm.get('name')?.errors?.required">
+          Please type a name.
+        </div>
+        <div class="invalid-feedback" *ngIf="contactForm.get('name')?.errors?.maxlength">
+          Name should be less then {{ contactForm.get('name')?.errors?.maxlength.requiredLength}} characters
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label>E-mail Address</label>
+        <input type="email" class="form-control" formControlName="email">
+        <div class="invalid-feedback" *ngIf="contactForm.get('email')?.errors?.required">
+          Please type an E-mail Address.
+        </div>
+        <div class="invalid-feedback" *ngIf="contactForm.get('email')?.errors?.email">
+          Please type a valid E-mail Address.
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label>Address</label>
+        <input type="text" class="form-control" formControlName="address">
+        <div class="invalid-feedback" *ngIf="contactForm.get('address')?.errors?.required">
+          Please type an address.
+        </div>
+        <div class="invalid-feedback" *ngIf="contactForm.get('address')?.errors?.maxlength">
+          Address should be less then {{ contactForm.get('address')?.errors?.maxlength.requiredLength}} characters
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label>Contact Number</label>
+        <input type="text" class="form-control" formControlName="phone">
+        <div class="invalid-feedback" *ngIf="contactForm.get('phone')?.errors?.required">
+          Please type a contact number.
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

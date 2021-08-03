@@ -1,0 +1,18 @@
+<div *ngIf="status === orderStatus.CANCELLED">
+  <span class="text-danger">Cancelled</span>
+</div>
+<div *ngIf="status === orderStatus.COMPLETED">
+  <span>Completed</span>
+</div>
+<div *ngIf="status === orderStatus.PENDING" class="d-flex align-items-center">
+  <button type="button" class="btn btn-link text-success pl-0" (click)="changeTo(orderStatus.ACCEPTED)">Accept</button>
+  <button type="button" class="btn btn-link text-danger" (click)="changeTo(orderStatus.CANCELLED)">Cancel</button>
+</div>
+<div *ngIf="status === orderStatus.ACCEPTED" class="d-flex justify-content-between align-items-center">
+  <span>Accepted</span>
+  <button type="button" class="btn btn-link text-primary" (click)="changeTo(orderStatus.IN_TRANSIT)">Mark as In-Transit</button>
+</div>
+<div *ngIf="status === orderStatus.IN_TRANSIT" class="d-flex justify-content-between align-items-center">
+  <span>In-Transit</span>
+  <button type="button" class="btn btn-link text-primary" (click)="changeTo(orderStatus.COMPLETED)">Mark as Completed</button>
+</div>

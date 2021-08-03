@@ -1,0 +1,51 @@
+<div class="content-wrapper">
+  <form [formGroup]="form" novalidate *ngIf="form">
+    <h1 class="text-uppercase mb-4">Pizza Order</h1>
+    <section class="basic-information mb-3">
+      <h3 class="with-border mb-3">Basic Information</h3>
+      <app-basic-information-form [formGroup]="form"></app-basic-information-form>
+    </section>
+    <section class="pizza-options">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h3>Choose your pizza</h3>
+        <button type="button" class="btn btn-outline-success" (click)="addPizza()">Add Pizza</button>
+      </div>
+      <ngb-accordion [activeIds]="activeIds" (panelChange)="onPanelChange($event)">
+        <ng-container *ngFor="let group of pizzaGroupControls; let i = index;">
+          <ngb-panel id="pizza-{{i}}">
+            <ng-template ngbPanelHeader let-opened="opened">
+              <div class="d-flex align-items-center justify-content-between">
+                <h5 class="m-0 text-uppercase">Pizza {{ i + 1}}</h5>
+                <div class="actions">
+                  <button type="button" class="btn btn-outline-danger mr-3"
+                          *ngIf="pizzaGroupControls.length > 1" (click)="removePizza(i)">Remove Pizza</button>
+                  <button ngbPanelToggle class="btn btn-link p-0">
+                    <i class="bi bi-caret-up-fill" role="img" aria-label="Opened" *ngIf="opened"></i>
+                    <i class="bi bi-caret-down-fill" role="img" aria-label="Closed" *ngIf="!opened"></i>
+                  </button>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template ngbPanelContent>
+              <app-pizza-options [formGroup]="group"></app-pizza-options>
+            </ng-template>
+          </ngb-panel>
+        </ng-container>
+      </ngb-accordion>
+    </section>
+    <section class="order-summary position-relative mb-5">
+      <h3 class="with-border mb-4">Summary</h3>
+      <div *ngIf="!loadingPrices else loadingTmpl">
+        <app-order-summary [pizzas]="form.get('pizzas')?.value" [prices]="prices" (updateTotalPrice)="updateTotalPrice($event)"></app-order-summary>
+      </div>
+    </section>
+    <section class="place-order d-flex justify-content-end pb-5">
+      <div>
+        <button type="button" class="btn btn-outline-primary" (click)="submitOrder()">Place Order</button>
+      </div>
+    </section>
+  </form>
+</div>
+<ng-template #loadingTmpl>
+  <app-loading></app-loading>
+</ng-template>

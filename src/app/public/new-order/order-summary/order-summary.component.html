@@ -1,0 +1,26 @@
+<div *ngIf="summaryDetails.length">
+  <ng-container *ngFor="let details of summaryDetails">
+    <div class="mb-3">
+      <div class="row">
+        <div class="col-2">
+          <p class="font-weight-bold">{{ details.name }}</p>
+        </div>
+        <div class="col-8">
+          <hr class="dashed-line">
+        </div>
+        <div class="col-2 text-right font-weight-bold">GBP {{details.price}}</div>
+      </div>
+      <div class="row" *ngFor="let toppingDetail of details.toppings">
+        <div class="col-2">
+          <div class="topping-name pl-4">{{ toppingDetail.name }}</div>
+        </div>
+        <div class="col-8"></div>
+        <div class="col-2 text-right">{{toppingDetail.price}}</div>
+      </div>
+    </div>
+  </ng-container>
+  <div class="d-flex justify-content-between total-section pt-4 font-weight-bold" *ngIf="total">
+    <h3>Total</h3>
+    <div class="price">{{total.toFixed(2)}}</div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.content-wrapper {
+  padding-bottom: 70px;
+  .order-summary {
+    min-height: 220px;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+    &.with-border {
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+  ngb-accordion ::ng-deep {
+    .card {
+      border: none !important;
+      .card-header {
+        background: #4a4a4a;
+        color: #fff;
+      }
+    }
+    .btn-link {
+      color: #fff;
+    }
+  }
+}

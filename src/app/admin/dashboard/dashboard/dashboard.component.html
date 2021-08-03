@@ -1,0 +1,66 @@
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-6">
+      <h1>Delivery Status</h1>
+      <div class="row">
+        <div class="col-6">
+          <apx-chart
+            #deliveredChart
+            *ngIf="deliveredChartOptions"
+            [series]="deliveredChartOptions.series"
+            [chart]="deliveredChartOptions.chart"
+            [plotOptions]="deliveredChartOptions.plotOptions"
+            [labels]="deliveredChartOptions.labels"
+            [stroke]="deliveredChartOptions.stroke"
+            [fill]="deliveredChartOptions.fill"
+          ></apx-chart>
+        </div>
+        <div class="col-6">
+          <apx-chart
+            #pendingDeliveredChart
+            *ngIf="pendingDeliveryChartOptions"
+            [series]="pendingDeliveryChartOptions.series"
+            [chart]="pendingDeliveryChartOptions.chart"
+            [plotOptions]="pendingDeliveryChartOptions.plotOptions"
+            [labels]="pendingDeliveryChartOptions.labels"
+            [stroke]="pendingDeliveryChartOptions.stroke"
+            [fill]="pendingDeliveryChartOptions.fill"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <h2>Total Sales</h2>
+      <p>GPB</p>
+      <p>{{ totalPrice | number : '1.2-2' }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <apx-chart
+        #lineChart
+        *ngIf="lineChartOptions"
+        [series]="lineChartOptions.series"
+        [chart]="lineChartOptions.chart"
+        [xaxis]="lineChartOptions.xaxis"
+        [stroke]="lineChartOptions.stroke"
+        [title]="lineChartOptions.title"
+        [yaxis]="lineChartOptions.yaxis"
+        [fill]="lineChartOptions.fill"
+      ></apx-chart>
+    </div>
+    <div class="col-4">
+      <p>Report</p>
+      <div class="row">
+        <div class="col-6">
+          <p>On Time Delivery</p>
+          {{ onTimeDeliveryPercent}}%
+        </div>
+        <div class="col-6">
+          <p>Late Deliveries</p>
+          {{ lateDeliveryPercent}}%
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

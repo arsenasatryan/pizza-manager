@@ -1,0 +1,42 @@
+<ng-container [formGroup]="pizzaForm" *ngIf="pizzaForm">
+  <div class="row mb-5">
+    <div class="col-12 pr-0">
+      <div class="list-title mb-3">
+        <label>
+          Choose size
+        </label>
+      </div>
+      <div class="btn-group btn-group-toggle size-options" ngbRadioGroup name="radioBasic" formControlName="size">
+        <label ngbButtonLabel class="btn-outline-primary mr-4">
+          <input ngbButton type="radio" value="large"> Large
+        </label>
+        <label ngbButtonLabel class="btn-outline-primary mr-4">
+          <input ngbButton type="radio" value="medium"> Medium
+        </label>
+        <label ngbButtonLabel class="btn-outline-primary mr-4">
+          <input ngbButton type="radio" value="small"> Small
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 pr-0">
+      <div class="list-title">
+        <label>
+          Pick your toppings
+        </label>
+      </div>
+      <div class="btn-group btn-group-toggle topping-options w-100">
+        <ng-container *ngFor="let topping of toppingOptions; let i = index">
+          <label class="btn-outline-primary checkbox-button d-flex align-items-center" ngbButtonLabel>
+            <span [class.checked]="isCheckedTopping(topping.value)" class="custom-checkbox"></span>
+            <input type="checkbox" (change)="onToppingsChange($event, topping.value)"
+                   [value]="topping.value"
+                   [valueChecked]="isCheckedTopping(topping.value)" ngbButton>{{topping.name}}
+          </label>
+          <div *ngIf="i !==0 && (i + 1) % 4 === 0" class="break"></div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>

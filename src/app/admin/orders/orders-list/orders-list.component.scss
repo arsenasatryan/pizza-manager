@@ -1,0 +1,84 @@
+@import "~src/scss/core/variables";
+
+.page-title {
+  color: #fff;
+  h1 {
+    font-size: 1.125rem;
+  }
+  p {
+    color: #a0aab7;
+  }
+}
+
+.completed {
+  background: $success;
+}
+.pending {
+  background: $primary;
+}
+.cancelled {
+  background: $danger;
+}
+
+.content-wrapper {
+  min-height: 400px;
+  .section-title {
+    font-size: 1rem;
+    color: #707086;
+  }
+  .total-items {
+    > .count {
+      font-size: 2rem;
+      color: #027aff;
+      margin-right: 5px;
+    }
+    > .text {
+      color: #adadb9;
+      font-size: 0.875rem;
+    }
+    .progress-line {
+      width: 250px;
+      height: 16px;
+      overflow: hidden;
+      > div {
+        float: left;
+        height: 100%;
+      }
+    }
+    .total-item-detail {
+      border-top: 1px solid #eaeaea;
+      .item-total {
+        position: relative;
+        &:before {
+          content: "";
+          height: 15px;
+          width: 15px;
+          border-radius: 100%;
+          position: absolute;
+          display: block;
+          top: 18px;
+          left: 0;
+        }
+        &.completed-state:before {
+          @extend .completed;
+        }
+        &.pending-state:before {
+          @extend .pending;
+        }
+        &.cancelled-state:before {
+          @extend .cancelled;
+        }
+        padding-left: 30px;
+        .text {
+          color: #515e6b;
+        }
+        .count {
+          color: #9797a6;
+        }
+      }
+    }
+  }
+}
+
+
+

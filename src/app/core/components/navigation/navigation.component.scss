@@ -1,0 +1,35 @@
+aside {
+  width: 215px;
+}
+.nav {
+  margin-top: 100px;
+  border-bottom: 1px solid #4d8ace;
+  padding-bottom: 40px;
+  .nav-link {
+    padding-left: 40px;
+    color: #a9b2be;
+    font-size: 1.125rem;
+    position: relative;
+    i {
+      font-size: 1.25rem;
+      color: #a9b2be
+    }
+    &.active {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0) 52px, rgba(255, 255, 255, 0) 100%);
+      color: #fff;
+      i {
+        color: #fff
+      }
+      &:before {
+        content: "";
+        border-left: 5px solid #fff;
+        position: absolute;
+        height: 45px;
+        left: 0;
+        top: 0;
+        border-bottom-right-radius: 7px;
+        border-top-right-radius: 7px;
+      }
+    }
+  }
+}
