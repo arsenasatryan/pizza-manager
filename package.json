@@ -23,7 +23,7 @@
     "apexcharts": "^3.27.3",
     "bootstrap": "^4.5.0",
     "ng-apexcharts": "^1.5.12",
-    "ngx-socket-io": "^4.1.0",
+    "ngx-socket-io": "^4.8.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
